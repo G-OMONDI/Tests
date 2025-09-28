@@ -1,122 +1,768 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TechStore</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+ 
+  <title>TechStore — Electronics Marketplace (HTML Skeleton)</title>
+   <link rel="stylesheet" href="styles.css">
+  <!-- NOTE: This is an HTML skeleton only. Add styles & scripts separately. -->
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">TechStore</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Phones</a></li>
-        <li><a href="#">TVs</a></li>
-        <li><a href="#">Laptops</a></li>
-        <li><a href="#">AVs</a></li>
-        <li><a href="#">Cart (0)</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- SITE CONTAINER -->
+  <div id="site">
 
-  <section class="hero">
-    <h1>Welcome to TechStore</h1>
-    <p>Shop the latest electronics from trusted brands.</p>
-    <button>Browse All Products</button>
-  </section>
+    <!-- HEADER / NAVBAR -->
+    <header id="header" role="banner">
+      <div id="brand">
+        <h1>TechStore</h1>
+        <p class="tagline">Shop the latest electronics from trusted brands</p>
+      </div>
 
-  <!-- Phones -->
-  <section class="category-section">
-    <div class="category-header">
-      <h2>Phones</h2>
-      <a href="#">View All</a>
-    </div>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="Phone 1">
-        <h3>Smartphone X</h3>
-        <p>$799</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="Phone 2">
-        <h3>Smartphone Y</h3>
-        <p>$699</p>
-        <button>Add to Cart</button>
-      </div>
-    </div>
-  </section>
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#phones">Phones</a></li>
+          <li><a href="#tvs">TVs</a></li>
+          <li><a href="#laptops">Laptops</a></li>
+          <li><a href="#avs">AV & Audio</a></li>
+          <li><a href="#cart">Cart (0)</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-  <!-- TVs -->
-  <section class="category-section">
-    <div class="category-header">
-      <h2>TVs</h2>
-      <a href="#">View All</a>
-    </div>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="TV 1">
-        <h3>Smart TV 55"</h3>
-        <p>$999</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="TV 2">
-        <h3>4K Ultra HD</h3>
-        <p>$1199</p>
-        <button>Add to Cart</button>
-      </div>
-    </div>
-  </section>
+      <!-- Simple search form (HTML-only) -->
+      <form id="search-form" role="search" aria-label="Site search">
+        <label for="q" class="sr-only">Search products</label>
+        <input id="q" name="q" type="search" placeholder="Search brand, model or category" />
+        <button type="submit">Search</button>
+      </form>
+    </header>
 
-  <!-- Laptops -->
-  <section class="category-section">
-    <div class="category-header">
-      <h2>Laptops</h2>
-      <a href="#">View All</a>
-    </div>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="Laptop 1">
-        <h3>UltraBook Pro</h3>
-        <p>$1499</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="Laptop 2">
-        <h3>Gaming Beast</h3>
-        <p>$1999</p>
-        <button>Add to Cart</button>
-      </div>
-    </div>
-  </section>
+    <!-- HERO -->
+    <main id="main" role="main">
+      <section id="home" class="hero" aria-labelledby="hero-heading">
+        <h2 id="hero-heading">Welcome to TechStore</h2>
+        <p>Browse phones, TVs, laptops and audio gear from many top brands.</p>
+        <p><a href="#phones">Browse Phones</a> · <a href="#tvs">Browse TVs</a> · <a href="#laptops">Browse Laptops</a> · <a href="#avs">Browse AV</a></p>
+      </section>
 
-  <!-- AVs -->
-  <section class="category-section">
-    <div class="category-header">
-      <h2>AVs</h2>
-      <a href="#">View All</a>
-    </div>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="AV 1">
-        <h3>Soundbar 2.1</h3>
-        <p>$299</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200" alt="AV 2">
-        <h3>Wireless Home Theater</h3>
-        <p>$499</p>
-        <button>Add to Cart</button>
-      </div>
-    </div>
-  </section>
+      <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="#">Home</a> > <span>All Products</span>
+  </nav>
+  <main class="container">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar">
+      <h3>Filter By</h3>
+      <div class="filter-category">
+        <h4>Brand</h4>
+        <ul>
+         <li><input type="checkbox" id="brand-apple" name="brand" value="Apple"><label for="brand-apple">Apple</label></li>
+         <li><input type="checkbox" id="brand-samsung" name="brand" value="Samsung"><label for="brand-samsung">Samsung</label></li>
+         <li><input type="checkbox" id="brand-lg" name="brand" value="LG"><label for="brand-lg">LG</label></li>
+         <li><input type="checkbox" id="brand-sony" name="brand" value="Sony"><label for="brand-sony">Sony</label></li>
+         <li><input type="checkbox" id="brand-dell" name="brand" value="Dell"><label for="brand-dell">Dell</label></li>
+         <li><input type="checkbox" id="brand-hp" name="brand" value="HP"><label for="brand-hp">HP</label></li>
+         <li><input type="checkbox" id="brand-lenovo" name="brand" value="Lenovo"><label for="brand-lenovo">Lenovo</label></li>
+         <li><input type="checkbox" id="brand-asus" name="brand" value="ASUS"><label for="brand-asus">ASUS</label></li>
+         <li><input type="checkbox" id="brand-acer" name="brand" value="Acer"><label for="brand-acer">Acer</label></li>
+         <li><input type="checkbox" id="brand-xiaomi" name="brand" value="Xiaomi"><label for="brand-xiaomi">Xiaomi</label></li>
+         <li><input type="checkbox" id="brand-huawei" name="brand" value="Huawei"><label for="brand-huawei">Huawei</label></li>
+         <li><input type="checkbox" id="brand-nothing" name="brand" value="Nothing"><label for="brand-nothing">Nothing</label></li>
+         <li><input type="checkbox" id="brand-oppo" name="brand" value="Oppo"><label for="brand-oppo">Oppo</label></li>
+         <li><input type="checkbox" id="brand-vivo" name="brand" value="Vivo"><label for="brand-vivo">Vivo</label></li>
+         <li><input type="checkbox" id="brand-realme" name="brand" value="Realme"><label for="brand-realme">Realme</label></li>
+         <li><input type="checkbox" id="brand-oneplus" name="brand" value="OnePlus"><label for="brand-oneplus">OnePlus</label></li>
+         <li><input type="checkbox" id="brand-tcl" name="brand" value="TCL"><label for="brand-tcl">TCL</label></li>
+         <li><input type="checkbox" id="brand-panasonic" name="brand" value="Panasonic"><label for="brand-panasonic">Panasonic</label></li>
+         <li><input type="checkbox" id="brand-bose" name="brand" value="Bose"><label for="brand-bose">Bose</label></li>
+         <li><input type="checkbox" id="brand-jbl" name="brand" value="JBL"><label for="brand-jbl">JBL</label></li>
+            
+          <!-- Add more brands as needed -->
+        </ul>
 
-  <footer>
-    <p>© 2025 TechStore. All rights reserved.</p>
-  </footer>
+      <!-- PHONE CATEGORY -->
+      <section id="phones" class="category" aria-labelledby="phones-heading">
+        <header class="category-header">
+          <h2 id="phones-heading">Phones</h2>
+          <p>Popular phone brands and sample models (skeleton entries).</p>
+        </header>
+
+        <!-- Brand directory (alphabetical-ish, broad coverage) -->
+        <nav aria-label="Phone brands">
+          <ul>
+            <li><a href="#phone-apple">Apple</a></li>
+            <li><a href="#phone-samsung">Samsung</a></li>
+            <li><a href="#phone-google">Google</a></li>
+            <li><a href="#phone-huawei">Huawei</a></li>
+            <li><a href="#phone-xiaomi">Xiaomi</a></li>
+            <li><a href="#phone-oneplus">OnePlus</a></li>
+            <li><a href="#phone-oppo">OPPO</a></li>
+            <li><a href="#phone-vivo">vivo</a></li>
+            <li><a href="#phone-realme">realme</a></li>
+            <li><a href="#phone-nokia">Nokia</a></li>
+            <li><a href="#phone-motorola">Motorola</a></li>
+            <li><a href="#phone-asus">ASUS</a></li>
+            <li><a href="#phone-lenovo">Lenovo</a></li>
+            <li><a href="#phone-honor">Honor</a></li>
+            <li><a href="#phone-poco">POCO</a></li>
+            <li><a href="#phone-tecno">Tecno</a></li>
+            <li><a href="#phone-infinix">Infinix</a></li>
+            <li><a href="#phone-itel">itel</a></li>
+            <li><a href="#phone-razr">Razr / Classic (legacy)</a></li>
+          </ul>
+        </nav>
+
+        <!-- Phone product grid (HTML-only cards for each brand; add images & details later) -->
+        <div class="product-list" aria-live="polite">
+          <!-- Apple -->
+          <article id="phone-apple" class="product-card" aria-labelledby="apple-title">
+            <h3 id="apple-title">Apple</h3>
+            <ul>
+              <li>iPhone 15 Pro</li>
+              <li>iPhone 15</li>
+              <li>iPhone 15 Plus</li>
+              <li>iPhone SE</li>
+              <li>iPhone 14 series</li>
+            </ul>
+            <p><a href="#phones">View Apple phones</a></p>
+          </article>
+
+          <!-- Samsung -->
+          <article id="phone-samsung" class="product-card" aria-labelledby="samsung-title">
+            <h3 id="samsung-title">Samsung</h3>
+            <ul>
+              <li>Galaxy S24 Ultra</li>
+              <li>Galaxy S24+</li>
+              <li>Galaxy S24</li>
+              <li>Galaxy Z Fold</li>
+              <li>Galaxy Z Flip</li>
+              <li>Galaxy A series</li>
+            </ul>
+          </article>
+
+          <!-- Google -->
+          <article id="phone-google" class="product-card" aria-labelledby="google-title">
+            <h3 id="google-title">Google</h3>
+            <ul>
+              <li>Pixel 8 Pro</li>
+              <li>Pixel 8</li>
+              <li>Pixel 7a</li>
+            </ul>
+          </article>
+
+          <!-- Huawei -->
+          <article id="phone-huawei" class="product-card" aria-labelledby="huawei-title">
+            <h3 id="huawei-title">Huawei</h3>
+            <ul>
+              <li>Pocket/Flip series</li>
+              <li>P series</li>
+              <li>Mate series</li>
+            </ul>
+          </article>
+
+          <!-- Xiaomi -->
+          <article id="phone-xiaomi" class="product-card" aria-labelledby="xiaomi-title">
+            <h3 id="xiaomi-title">Xiaomi (Mi / Redmi)</h3>
+            <ul>
+              <li>Mi series</li>
+              <li>Redmi Note</li>
+              <li>Redmi series</li>
+              <li>Poco models</li>
+            </ul>
+          </article>
+
+          <!-- OnePlus -->
+          <article id="phone-oneplus" class="product-card" aria-labelledby="oneplus-title">
+            <h3 id="oneplus-title">OnePlus</h3>
+            <ul>
+              <li>OnePlus 12</li>
+              <li>Nord series</li>
+            </ul>
+          </article>
+
+          <!-- OPPO -->
+          <article id="phone-oppo" class="product-card" aria-labelledby="oppo-title">
+            <h3 id="oppo-title">OPPO</h3>
+            <ul>
+              <li>Find X series</li>
+              <li>Reno series</li>
+            </ul>
+          </article>
+
+          <!-- vivo -->
+          <article id="phone-vivo" class="product-card" aria-labelledby="vivo-title">
+            <h3 id="vivo-title">vivo</h3>
+            <ul>
+              <li>X series</li>
+              <li>V series</li>
+            </ul>
+          </article>
+
+          <!-- realme -->
+          <article id="phone-realme" class="product-card" aria-labelledby="realme-title">
+            <h3 id="realme-title">realme</h3>
+            <ul>
+              <li>GT series</li>
+              <li>Numbered & Narzo series</li>
+            </ul>
+          </article>
+
+          <!-- Nokia -->
+          <article id="phone-nokia" class="product-card" aria-labelledby="nokia-title">
+            <h3 id="nokia-title">Nokia</h3>
+            <ul>
+              <li>Nokia XR20</li>
+              <li>Feature phones & classics</li>
+            </ul>
+          </article>
+
+          <!-- Motorola -->
+          <article id="phone-motorola" class="product-card" aria-labelledby="moto-title">
+            <h3 id="moto-title">Motorola</h3>
+            <ul>
+              <li>Edge series</li>
+              <li>Moto G series</li>
+            </ul>
+          </article>
+
+          <!-- ASUS -->
+          <article id="phone-asus" class="product-card" aria-labelledby="asus-title">
+            <h3 id="asus-title">ASUS</h3>
+            <ul>
+              <li>ROG Phone (gaming)</li>
+              <li>Zenfone series</li>
+            </ul>
+          </article>
+
+          <!-- Lenovo -->
+          <article id="phone-lenovo" class="product-card" aria-labelledby="lenovo-title">
+            <h3 id="lenovo-title">Lenovo</h3>
+            <ul>
+              <li>Motorola-owned models (Lenovo branded in some markets)</li>
+            </ul>
+          </article>
+
+          <!-- Honor -->
+          <article id="phone-honor" class="product-card" aria-labelledby="honor-title">
+            <h3 id="honor-title">Honor</h3>
+            <ul>
+              <li>Magic series</li>
+              <li>Honor X/Y series</li>
+            </ul>
+          </article>
+
+          <!-- POCO -->
+          <article id="phone-poco" class="product-card" aria-labelledby="poco-title">
+            <h3 id="poco-title">POCO</h3>
+            <ul>
+              <li>Poco F series</li>
+              <li>Poco X series</li>
+            </ul>
+          </article>
+
+          <!-- Tecno / Infinix / itel (popular in Africa) -->
+          <article id="phone-tecno" class="product-card" aria-labelledby="tecno-title">
+            <h3 id="tecno-title">Tecno</h3>
+            <ul>
+              <li>Camon series</li>
+              <li>Spark series</li>
+            </ul>
+          </article>
+
+          <article id="phone-infinix" class="product-card" aria-labelledby="infinix-title">
+            <h3 id="infinix-title">Infinix</h3>
+            <ul>
+              <li>Zero series</li>
+              <li>Hot series</li>
+            </ul>
+          </article>
+
+          <article id="phone-itel" class="product-card" aria-labelledby="itel-title">
+            <h3 id="itel-title">itel</h3>
+            <ul>
+              <li>Budget and feature phone models</li>
+            </ul>
+          </article>
+
+        </div><!-- end phone product-list -->
+      </section>
+
+      <!-- TV CATEGORY -->
+      <section id="tvs" class="category" aria-labelledby="tvs-heading">
+        <header class="category-header">
+          <h2 id="tvs-heading">Televisions (TVs)</h2>
+          <p>TV brands — from premium OLEDs to budget LED models.</p>
+        </header>
+
+        <nav aria-label="TV brands">
+          <ul>
+            <li><a href="#tv-samsung">Samsung</a></li>
+            <li><a href="#tv-lg">LG</a></li>
+            <li><a href="#tv-sony">Sony</a></li>
+            <li><a href="#tv-tcl">TCL</a></li>
+            <li><a href="#tv-hisense">Hisense</a></li>
+            <li><a href="#tv-panasonic">Panasonic</a></li>
+            <li><a href="#tv-philips">Philips</a></li>
+            <li><a href="#tv-sharp">Sharp</a></li>
+            <li><a href="#tv-vizio">Vizio</a></li>
+            <li><a href="#tv-toshiba">Toshiba</a></li>
+            <li><a href="#tv-sanyo">Sanyo</a></li>
+            <li><a href="#tv-skyworth">Skyworth</a></li>
+            <li><a href="#tv-changhong">Changhong</a></li>
+          </ul>
+        </nav>
+
+        <div class="product-list">
+          <article id="tv-samsung" class="product-card" aria-labelledby="tv-samsung-title">
+            <h3 id="tv-samsung-title">Samsung</h3>
+            <ul>
+              <li>QLED / Neo QLED</li>
+              <li>Crystal UHD</li>
+              <li>BUILT-IN Smart TVs</li>
+            </ul>
+          </article>
+
+          <article id="tv-lg" class="product-card" aria-labelledby="tv-lg-title">
+            <h3 id="tv-lg-title">LG</h3>
+            <ul>
+              <li>OLED</li>
+              <li>NanoCell</li>
+              <li>Smart WebOS TVs</li>
+            </ul>
+          </article>
+
+          <article id="tv-sony" class="product-card" aria-labelledby="tv-sony-title">
+            <h3 id="tv-sony-title">Sony</h3>
+            <ul>
+              <li>Bravia XR OLED/LED</li>
+              <li>4K & 8K Models</li>
+            </ul>
+          </article>
+
+          <article id="tv-tcl" class="product-card" aria-labelledby="tv-tcl-title">
+            <h3 id="tv-tcl-title">TCL</h3>
+            <ul>
+              <li>QLED & Mini-LED</li>
+              <li>Roku TV / Google TV models</li>
+            </ul>
+          </article>
+
+          <article id="tv-hisense" class="product-card" aria-labelledby="tv-hisense-title">
+            <h3 id="tv-hisense-title">Hisense</h3>
+            <ul>
+              <li>ULED series</li>
+              <li>Budget & mid-range smart TVs</li>
+            </ul>
+          </article>
+
+          <article id="tv-panasonic" class="product-card" aria-labelledby="tv-panasonic-title">
+            <h3 id="tv-panasonic-title">Panasonic</h3>
+            <ul>
+              <li>OLED & LED models</li>
+            </ul>
+          </article>
+
+          <article id="tv-philips" class="product-card" aria-labelledby="tv-philips-title">
+            <h3 id="tv-philips-title">Philips</h3>
+            <ul>
+              <li>Ambilight series</li>
+            </ul>
+          </article>
+
+          <article id="tv-sharp" class="product-card" aria-labelledby="tv-sharp-title">
+            <h3 id="tv-sharp-title">Sharp</h3>
+            <ul>
+              <li>LED / LCD models</li>
+            </ul>
+          </article>
+
+          <article id="tv-vizio" class="product-card" aria-labelledby="tv-vizio-title">
+            <h3 id="tv-vizio-title">Vizio</h3>
+            <ul>
+              <li>SmartCast TVs</li>
+            </ul>
+          </article>
+
+          <article id="tv-toshiba" class="product-card" aria-labelledby="tv-toshiba-title">
+            <h3 id="tv-toshiba-title">Toshiba</h3>
+            <ul>
+              <li>LED & Smart models</li>
+            </ul>
+          </article>
+
+          <article id="tv-sanyo" class="product-card" aria-labelledby="tv-sanyo-title">
+            <h3 id="tv-sanyo-title">Sanyo</h3>
+            <ul>
+              <li>Entry-level TV models</li>
+            </ul>
+          </article>
+
+          <article id="tv-skyworth" class="product-card" aria-labelledby="tv-skyworth-title">
+            <h3 id="tv-skyworth-title">Skyworth</h3>
+            <ul>
+              <li>Smart TVs & affordable models</li>
+            </ul>
+          </article>
+
+          <article id="tv-changhong" class="product-card" aria-labelledby="tv-changhong-title">
+            <h3 id="tv-changhong-title">Changhong</h3>
+            <ul>
+              <li>Budget & mid-range TVs</li>
+            </ul>
+          </article>
+
+        </div><!-- end tv product-list -->
+      </section>
+
+      <!-- LAPTOP CATEGORY -->
+      <section id="laptops" class="category" aria-labelledby="laptops-heading">
+        <header class="category-header">
+          <h2 id="laptops-heading">Laptops</h2>
+          <p>Laptop brands for work, study and gaming.</p>
+        </header>
+
+        <nav aria-label="Laptop brands">
+          <ul>
+            <li><a href="#laptop-apple">Apple (MacBook)</a></li>
+            <li><a href="#laptop-dell">Dell</a></li>
+            <li><a href="#laptop-hp">HP</a></li>
+            <li><a href="#laptop-lenovo">Lenovo</a></li>
+            <li><a href="#laptop-asus">ASUS</a></li>
+            <li><a href="#laptop-acer">Acer</a></li>
+            <li><a href="#laptop-msi">MSI</a></li>
+            <li><a href="#laptop-razer">Razer</a></li>
+            <li><a href="#laptop-microsoft">Microsoft (Surface)</a></li>
+            <li><a href="#laptop-huawei-l">Huawei</a></li>
+            <li><a href="#laptop-others">Other brands</a></li>
+          </ul>
+        </nav>
+
+        <div class="product-list">
+          <article id="laptop-apple" class="product-card" aria-labelledby="macbook-title">
+            <h3 id="macbook-title">Apple — MacBook</h3>
+            <ul>
+              <li>MacBook Air (M1 / M2 / M3)</li>
+              <li>MacBook Pro (13", 14", 16")</li>
+            </ul>
+          </article>
+
+          <article id="laptop-dell" class="product-card" aria-labelledby="dell-title">
+            <h3 id="dell-title">Dell</h3>
+            <ul>
+              <li>XPS series</li>
+              <li>Inspiron series</li>
+              <li>Alienware (gaming)</li>
+            </ul>
+          </article>
+
+          <article id="laptop-hp" class="product-card" aria-labelledby="hp-title">
+            <h3 id="hp-title">HP</h3>
+            <ul>
+              <li>Spectre</li>
+              <li>Envy</li>
+              <li>Pavilion</li>
+              <li>Omen (gaming)</li>
+            </ul>
+          </article>
+
+          <article id="laptop-lenovo" class="product-card" aria-labelledby="lenovo-laptop-title">
+            <h3 id="lenovo-laptop-title">Lenovo</h3>
+            <ul>
+              <li>ThinkPad</li>
+              <li>Yoga</li>
+              <li>IdeaPad</li>
+            </ul>
+          </article>
+
+          <article id="laptop-asus" class="product-card" aria-labelledby="asus-laptop-title">
+            <h3 id="asus-laptop-title">ASUS</h3>
+            <ul>
+              <li>ZenBook</li>
+              <li>VivoBook</li>
+              <li>ROG (gaming)</li>
+            </ul>
+          </article>
+
+          <article id="laptop-acer" class="product-card" aria-labelledby="acer-title">
+            <h3 id="acer-title">Acer</h3>
+            <ul>
+              <li>Aspire</li>
+              <li>Swift</li>
+              <li>Predator (gaming)</li>
+            </ul>
+          </article>
+
+          <article id="laptop-msi" class="product-card" aria-labelledby="msi-title">
+            <h3 id="msi-title">MSI</h3>
+            <ul>
+              <li>Stealth / Blade</li>
+              <li>Gaming series</li>
+            </ul>
+          </article>
+
+          <article id="laptop-razer" class="product-card" aria-labelledby="razer-title">
+            <h3 id="razer-title">Razer</h3>
+            <ul>
+              <li>Razer Blade (gaming)</li>
+            </ul>
+          </article>
+
+          <article id="laptop-microsoft" class="product-card" aria-labelledby="ms-title">
+            <h3 id="ms-title">Microsoft</h3>
+            <ul>
+              <li>Surface Laptop</li>
+              <li>Surface Pro</li>
+            </ul>
+          </article>
+
+          <article id="laptop-huawei-l" class="product-card" aria-labelledby="huawei-laptop-title">
+            <h3 id="huawei-laptop-title">Huawei</h3>
+            <ul>
+              <li>MateBook series</li>
+            </ul>
+          </article>
+
+          <article id="laptop-others" class="product-card" aria-labelledby="others-title">
+            <h3 id="others-title">Other Brands</h3>
+            <ul>
+              <li>Aorus</li>
+              <li>Samsung (Galaxy Book)</li>
+              <li>Gigabyte</li>
+              <li>Toshiba (legacy models)</li>
+            </ul>
+          </article>
+
+        </div><!-- end laptop product-list -->
+      </section>
+
+      <!-- AV / AUDIO CATEGORY -->
+      <section id="avs" class="category" aria-labelledby="avs-heading">
+        <header class="category-header">
+          <h2 id="avs-heading">AV & Audio</h2>
+          <p>Speakers, soundbars, receivers and home theater brands.</p>
+        </header>
+
+        <nav aria-label="Audio brands">
+          <ul>
+            <li><a href="#av-bose">Bose</a></li>
+            <li><a href="#av-sonos">Sonos</a></li>
+            <li><a href="#av-jbl">JBL</a></li>
+            <li><a href="#av-jbl">JBL</a></li>
+            <li><a href="#av-sony-audio">Sony</a></li>
+            <li><a href="#av-samsung-audio">Samsung Audio</a></li>
+            <li><a href="#av-lg-audio">LG Audio</a></li>
+            <li><a href="#av-yamaha">Yamaha</a></li>
+            <li><a href="#av-denon">Denon</a></li>
+            <li><a href="#av-pioneer">Pioneer</a></li>
+            <li><a href="#av-klipsch">Klipsch</a></li>
+            <li><a href="#av-polk">Polk</a></li>
+            <li><a href="#av-hk">Harman Kardon</a></li>
+            <li><a href="#av-sennheiser">Sennheiser</a></li>
+            <li><a href="#av-bang">Bang & Olufsen</a></li>
+            <li><a href="#av-marantz">Marantz</a></li>
+            <li><a href="#av-onkyo">Onkyo</a></li>
+          </ul>
+        </nav>
+
+        <div class="product-list">
+          <article id="av-bose" class="product-card" aria-labelledby="bose-title">
+            <h3 id="bose-title">Bose</h3>
+            <ul>
+              <li>Soundbars</li>
+              <li>Home theater systems</li>
+              <li>Bluetooth speakers</li>
+            </ul>
+          </article>
+
+          <article id="av-sonos" class="product-card" aria-labelledby="sonos-title">
+            <h3 id="sonos-title">Sonos</h3>
+            <ul>
+              <li>Multi-room speakers</li>
+              <li>Soundbars</li>
+            </ul>
+          </article>
+
+          <article id="av-jbl" class="product-card" aria-labelledby="jbl-title">
+            <h3 id="jbl-title">JBL</h3>
+            <ul>
+              <li>Portable Bluetooth speakers</li>
+              <li>Soundbars</li>
+            </ul>
+          </article>
+
+          <article id="av-sony-audio" class="product-card" aria-labelledby="sony-audio-title">
+            <h3 id="sony-audio-title">Sony (Audio)</h3>
+            <ul>
+              <li>Soundbars</li>
+              <li>Headphones</li>
+              <li>Home theater systems</li>
+            </ul>
+          </article>
+
+          <article id="av-samsung-audio" class="product-card" aria-labelledby="samsung-audio-title">
+            <h3 id="samsung-audio-title">Samsung Audio</h3>
+            <ul>
+              <li>Soundbars</li>
+              <li>Home theater</li>
+            </ul>
+          </article>
+
+          <article id="av-lg-audio" class="product-card" aria-labelledby="lg-audio-title">
+            <h3 id="lg-audio-title">LG Audio</h3>
+            <ul>
+              <li>Soundbars</li>
+              <li>Bluetooth speakers</li>
+            </ul>
+          </article>
+
+          <article id="av-yamaha" class="product-card" aria-labelledby="yamaha-title">
+            <h3 id="yamaha-title">Yamaha</h3>
+            <ul>
+              <li>AV receivers</li>
+              <li>Speakers</li>
+            </ul>
+          </article>
+
+          <article id="av-denon" class="product-card" aria-labelledby="denon-title">
+            <h3 id="denon-title">Denon</h3>
+            <ul>
+              <li>AV receivers</li>
+              <li>Home theater</li>
+            </ul>
+          </article>
+
+          <article id="av-pioneer" class="product-card" aria-labelledby="pioneer-title">
+            <h3 id="pioneer-title">Pioneer</h3>
+            <ul>
+              <li>Receivers & car audio</li>
+            </ul>
+          </article>
+
+          <article id="av-klipsch" class="product-card" aria-labelledby="klipsch-title">
+            <h3 id="klipsch-title">Klipsch</h3>
+            <ul>
+              <li>High-performance speakers</li>
+            </ul>
+          </article>
+
+          <article id="av-polk" class="product-card" aria-labelledby="polk-title">
+            <h3 id="polk-title">Polk Audio</h3>
+            <ul>
+              <li>Speakers & soundbars</li>
+            </ul>
+          </article>
+
+          <article id="av-hk" class="product-card" aria-labelledby="hk-title">
+            <h3 id="hk-title">Harman Kardon</h3>
+            <ul>
+              <li>Speakers & receivers</li>
+            </ul>
+          </article>
+
+          <article id="av-sennheiser" class="product-card" aria-labelledby="senn-title">
+            <h3 id="senn-title">Sennheiser</h3>
+            <ul>
+              <li>Headphones & pro audio</li>
+            </ul>
+          </article>
+
+          <article id="av-bang" class="product-card" aria-labelledby="bang-title">
+            <h3 id="bang-title">Bang & Olufsen</h3>
+            <ul>
+              <li>Premium speakers & sound systems</li>
+            </ul>
+          </article>
+
+          <article id="av-marantz" class="product-card" aria-labelledby="marantz-title">
+            <h3 id="marantz-title">Marantz</h3>
+            <ul>
+              <li>Hi-Fi & AV receivers</li>
+            </ul>
+          </article>
+
+          <article id="av-onkyo" class="product-card" aria-labelledby="onkyo-title">
+            <h3 id="onkyo-title">Onkyo</h3>
+            <ul>
+              <li>Receivers & home theater</li>
+            </ul>
+          </article>
+
+        </div><!-- end av product-list -->
+      </section>
+
+      <!-- GENERIC PRODUCTS / CROSS-CATEGORY (example layout) -->
+      <section id="catalog-sample" class="category" aria-labelledby="catalog-sample-heading">
+        <h2 id="catalog-sample-heading">Sample product entries (skeleton)</h2>
+        <p>Below are skeleton product cards you can duplicate for each model/brand.</p>
+
+        <div class="product-grid">
+          <!-- Example card -->
+          <article class="product-card" aria-labelledby="sample1-title">
+            <h3 id="sample1-title">Sample: Smartphone X — Apple</h3>
+            <p class="sku">SKU: APP-IP-15P</p>
+            <p class="price">$999</p>
+            <p class="availability">In stock</p>
+            <p class="desc">Short description placeholder. Replace with real copy and images.</p>
+            <p><a href="#cart">Add to cart</a> · <a href="#contact">Ask a question</a></p>
+          </article>
+
+          <article class="product-card" aria-labelledby="sample2-title">
+            <h3 id="sample2-title">Sample: Ultra 4K TV — Samsung</h3>
+            <p class="sku">SKU: SAM-TV-55Q</p>
+            <p class="price">$1,299</p>
+            <p class="availability">Pre-order</p>
+            <p class="desc">Short description placeholder for a TV model.</p>
+            <p><a href="#contact">Contact sales</a></p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT / FOOTER INFO -->
+      <section id="contact" class="category" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact & Support</h2>
+        <address>
+          TechStore Support<br>
+          Email: <a href="mailto:support@techstore.example">support@techstore.example</a><br>
+          Phone: +000 000 0000
+        </address>
+
+        <form id="contact-form" aria-label="Contact form">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer id="footer" role="contentinfo">
+      <p>© 2025 TechStore. All rights reserved.</p>
+      <nav aria-label="footer links">
+        <ul>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms</a></li>
+          <li><a href="#sitemap">Sitemap</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+  </div><!-- end site -->
+
+  <!-- Inline notes for devs (kept in HTML so it's visible in the skeleton) -->
+  <!--
+    Developer notes:
+    - This is intentionally HTML-only (no CSS/JS).
+    - Replace lists with real product card markup and images when adding CSS.
+    - For full catalog, duplicate the product-card structure and fill product data.
+    - Add structured data (JSON-LD) and server-side data feed when integrating with backend.
+  -->
 </body>
 </html>
+
